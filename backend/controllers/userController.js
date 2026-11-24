@@ -46,7 +46,7 @@ const registerUser=async(req,res)=>{
             password:hashedPassword
         })
         await newUser.save()
-        const token=createToken(user._id)
+        const token=createToken(newUser._id)
         res.json({success:true,token})
     } catch (error) {
         console.log(error)
